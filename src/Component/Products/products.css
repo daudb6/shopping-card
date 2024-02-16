@@ -1,0 +1,67 @@
+.Card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card-info {
+  width: 300px;
+  height: 420px;
+  margin-left: 1rem;
+  border: 2px solid pink;
+  border-radius: 16px;
+  background: #fffafa;
+  box-shadow: 31px 31px 100px #ccc8c8, -31px -31px 100px #ffffff;
+  padding: 20px;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.card-details img {
+  height: 200px;
+}
+.card-img img {
+  height: 160px;
+  padding: 1rem;
+}
+.card-details h2 {
+  font-size: 1.5rem;
+  color: blue;
+}
+
+.card-description p {
+  width: 300px;
+  text-align: justify;
+  color: #303f;
+  padding-top: 10px;
+  font-size: 0.8rem;
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+/* .price-phone {
+  padding-top: 2.7rem;
+} */
+.price span {
+  color: red;
+  font-size: 1.4rem;
+}
+.price button {
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: blueviolet;
+  color: aliceblue;
+}
+.checked {
+  background-color: #ffffff !important;
+  color: black !important;
+}

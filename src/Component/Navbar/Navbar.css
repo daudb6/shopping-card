@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  padding: 10px 8rem;
+  background-color: cadetblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav {
+  display: flex;
+  gap: 3rem;
+}
+nav a {
+  text-decoration: none;
+  color: chartreuse;
+}
