@@ -5,7 +5,7 @@ import { Products } from "./Component/Products/Products";
 import { Provider } from "react-redux";
 import store from "./Features/store";
 import CartSlice from "./Features/CartSlice";
-import { cart } from "./Component/Cart/cart";
+import { Cart } from "./Component/Cart/cart";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="Products" element={<Products />} />
-        <Route path="Cart" element={<cart />} />
+        <Route path="cart" element={<Cart />} />
       </Routes>
     </Provider>
   );

@@ -1,0 +1,44 @@
+.cart-data {
+  display:flex;
+  align-items: center;
+}
+
+.main-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+}
+.ycard {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+column-gap: 12rem;
+}
+
+.heading {
+  padding-bottom: 5rem;
+}
+
+.img img {
+  height: 100px;
+}
+
+.Items {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.details h3 {
+font-size: 1.3rem;
+}
+.Price {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.btn {
+  width: 50%;
+  padding: 5px;
+}
