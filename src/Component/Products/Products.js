@@ -8,6 +8,7 @@ import { addToCart } from '../../Features/CartSlice.js'
 
 export const Products = () => {
   const dispatch = useDispatch()
+ 
   
 
 const handleData = (e,s) => {
