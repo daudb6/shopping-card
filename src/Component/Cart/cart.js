@@ -1,8 +1,8 @@
 
-import React from "react";
+import React, { useState } from "react";
 import "./cart.css";
 import { useSelector, useDispatch } from "react-redux";
-import { addCartData, removeCart } from "../../Features/CartSlice";
+import { Decrement, addCartData, increment, removeCart } from "../../Features/CartSlice";
 
 export const Cart = () => {
   const cartItems = useSelector((state) => state.cartReducer.cart);
@@ -10,10 +10,12 @@ export const Cart = () => {
   const dispatch = useDispatch();
 
   return (
+    
     <div className="main-cart">
       <div className="heading">
         <h1>YOUR BAG</h1>
       </div>
+      
       <div className="ycard">
         {cartItems.map((item, i) => (
           <div className="cart-data" key={i}>
@@ -37,9 +39,16 @@ export const Cart = () => {
                 </button>
               </div>
             </div>
+
+            <div className="y-btn">
+             
+        <button onClick = {() => dispatch(increment(i))}type="button">+</button>
+        <span>{item.quantity}</span>
+        <button onClick={() => dispatch(Decrement(i))} type="button">-</button>
+      </div>
           </div>
         ))}
-      </div>
+      </div>    
       <hr />
 
       <div className="total">
@@ -47,5 +56,8 @@ export const Cart = () => {
         <span>${cartTotal}</span>
       </div>
     </div>
+
+   
+   
   );
 };

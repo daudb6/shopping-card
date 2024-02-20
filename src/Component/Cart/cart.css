@@ -28,6 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-right: 40px;
 }
 
 .details h3 {
@@ -62,4 +63,9 @@ hr {
 }
 .total span {
   font-size: 2.5rem;
+}
+
+.y-btn {
+  display: flex;
+  flex-direction: column;
 }

@@ -21,6 +21,25 @@ const cartSlice = createSlice({
       state.cartTotal -= removedItem.price;
     },
   
+
+
+    increment: (state,action) => {
+      state.cart[action.payload].quantity +=1
+      state.cartTotal= state.cartTotal + state.cart[action.payload].price
+    },
+
+
+
+Decrement: (state,action) => {
+  if(state.cart[action.payload].quantity > 0){
+    state.cartTotal=state.cartTotal - state.cart[action.payload].price 
+   }
+
+   state.cart[action.payload].quantity =Math.max(0, state.cart[action.payload].quantity - 1)
+
+}
+
+    
   },
   extraReducers: (builder) => {
     builder
@@ -31,6 +50,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeCart, addCartData } = cartSlice.actions;
+export const { addToCart, removeCart, addCartData, increment,Decrement } = cartSlice.actions;
 export default cartSlice.reducer;
 
