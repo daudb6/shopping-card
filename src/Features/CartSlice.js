@@ -34,8 +34,13 @@ Decrement: (state,action) => {
   if(state.cart[action.payload].quantity > 0){
     state.cartTotal=state.cartTotal - state.cart[action.payload].price 
    }
+  
 
    state.cart[action.payload].quantity =Math.max(0, state.cart[action.payload].quantity - 1)
+
+   if(state.cart[action.payload].quantity <= 0){
+    state.cart= state.cart.filter((v,i) => i !== action.payload)
+   }
 
 }
 

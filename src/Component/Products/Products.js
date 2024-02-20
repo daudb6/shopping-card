@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./products.css"
 import {data} from "../data.js"
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,13 +7,19 @@ import { addToCart } from '../../Features/CartSlice.js'
 
 
 export const Products = () => {
+  let storedata=[]
   const dispatch = useDispatch()
+ 
+  
  
   
 
 const handleData = (e,s) => {
   s.preventDefault()
   s.target.classList.add("checked") 
+  s.target.disabled=true
+  storedata.push(e)
+  localStorage.setItem('save',JSON.stringify(storedata))
   dispatch(addToCart(e))
  
 }

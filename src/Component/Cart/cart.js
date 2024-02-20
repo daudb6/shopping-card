@@ -1,13 +1,35 @@
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./cart.css";
 import { useSelector, useDispatch } from "react-redux";
-import { Decrement, addCartData, increment, removeCart } from "../../Features/CartSlice";
+import { Decrement, addCartData, addToCart, increment, removeCart } from "../../Features/CartSlice";
 
 export const Cart = () => {
   const cartItems = useSelector((state) => state.cartReducer.cart);
   const cartTotal = useSelector((state) => state.cartReducer.cartTotal);
   const dispatch = useDispatch();
+
+ let handleClick =  (index) => {
+    dispatch(removeCart(index));
+    let localData = JSON.parse(localStorage.getItem('save'))
+    localStorage.setItem('save',JSON.stringify(localData.filter((v,i) => i !== index))) 
+
+  }
+
+  useEffect(() => {
+    
+    if(cartItems.length === 0){
+      
+      let localData =JSON.parse(localStorage.getItem('save'))
+      localData.map((a) => {
+       dispatch(addToCart(a))
+  
+      })
+
+    }
+   
+
+ },[])
 
   return (
     
@@ -29,9 +51,7 @@ export const Cart = () => {
               <div className="Price">
                 <span>Price: ${item.price} </span>
                 <button
-                  onClick={() => {
-                    dispatch(removeCart(i));
-                  }}
+                  onClick={() => handleClick(i)}
                   className="btn"
                   type="button"
                 >
